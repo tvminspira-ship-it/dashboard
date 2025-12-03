@@ -30,7 +30,7 @@
                 </div>
                 <div class="title-section">
                     <h1 class="main-title">Vulnerability Management Dashboard</h1>
-                    <p class="subtitle">Real-time Security Overview</p>
+                    <p class="subtitle">🔒 Real-time Security Overview & Analytics</p>
                 </div>
             </div>
         </div>
@@ -38,34 +38,35 @@
         <!-- Key Metrics -->
         <div class="metrics-grid">
             <div class="metric-card bg-purple">
-                <div class="metric-value" id="total-vulns">375</div>
-                <div class="metric-label">Total Vulnerabilities</div>
+                <div class="metric-value">375</div>
+                <div class="metric-label">📈 Total Vulnerabilities</div>
             </div>
             <div class="metric-card bg-red">
-                <div class="metric-value" id="open-vulns">52</div>
-                <div class="metric-label">Open Vulnerabilities</div>
+                <div class="metric-value">52</div>
+                <div class="metric-label">⚠️ Open Vulnerabilities</div>
             </div>
             <div class="metric-card bg-green">
-                <div class="metric-value" id="closed-vulns">323</div>
-                <div class="metric-label">Closed Vulnerabilities</div>
+                <div class="metric-value">323</div>
+                <div class="metric-label">✅ Closed Vulnerabilities</div>
             </div>
             <div class="metric-card bg-orange">
-                <div class="metric-value" id="resolution-rate">86.1%</div>
-                <div class="metric-label">Resolution Rate</div>
+                <div class="metric-value">86.1%</div>
+                <div class="metric-label">🎯 Resolution Rate</div>
             </div>
             <div class="metric-card bg-blue">
                 <div class="metric-value">128</div>
-                <div class="metric-label">Avg. Age (Days)</div>
+                <div class="metric-label">⏱️ Avg. Age (Days)</div>
             </div>
         </div>
 
         <!-- Tabs -->
         <div class="tabs-container">
             <div class="tabs">
-                <button class="tab-button active" onclick="showTab('overview')">Overview</button>
-                <button class="tab-button" onclick="showTab('web')">Web Applications</button>
-                <button class="tab-button" onclick="showTab('api')">API</button>
-                <button class="tab-button" onclick="showTab('mobile')">Mobile</button>
+                <button class="tab-button active" onclick="showTab('overview')">🔍 Overview</button>
+                <button class="tab-button" onclick="showTab('web')">🌐 Web Applications</button>
+                <button class="tab-button" onclick="showTab('api')">🔌 API</button>
+                <button class="tab-button" onclick="showTab('mobile')">📱 Mobile</button>
+                <button class="tab-button" onclick="showTab('aging')">⏰ Aging Analysis</button>
             </div>
         </div>
 
@@ -106,19 +107,19 @@
             <div class="summary-grid">
                 <div class="summary-card">
                     <div class="summary-value text-purple">52</div>
-                    <div class="summary-label">Total Vulnerabilities</div>
+                    <div class="summary-label">📊 Total Vulnerabilities</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-red">16</div>
-                    <div class="summary-label">Open</div>
+                    <div class="summary-label">🔴 Open</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-green">36</div>
-                    <div class="summary-label">Closed</div>
+                    <div class="summary-label">🟢 Closed</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-orange">1</div>
-                    <div class="summary-label">High Severity</div>
+                    <div class="summary-label">⚠️ High Severity</div>
                 </div>
             </div>
 
@@ -128,10 +129,10 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Application Name</th>
-                                <th>Vulnerabilities</th>
-                                <th>Age (Days)</th>
-                                <th>Highest Severity</th>
+                                <th>🌐 Application Name</th>
+                                <th>📊 Vulnerabilities</th>
+                                <th>⏰ Age (Days)</th>
+                                <th>🎯 Highest Severity</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -182,19 +183,19 @@
             <div class="summary-grid">
                 <div class="summary-card">
                     <div class="summary-value text-cyan">312</div>
-                    <div class="summary-label">Total Vulnerabilities</div>
+                    <div class="summary-label">📊 Total Vulnerabilities</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-red">28</div>
-                    <div class="summary-label">Open</div>
+                    <div class="summary-label">🔴 Open</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-green">284</div>
-                    <div class="summary-label">Closed</div>
+                    <div class="summary-label">🟢 Closed</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-orange">1</div>
-                    <div class="summary-label">High Severity</div>
+                    <div class="summary-label">⚠️ High Severity</div>
                 </div>
             </div>
 
@@ -204,10 +205,10 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Application Name</th>
-                                <th>Vulnerabilities</th>
-                                <th>Age (Days)</th>
-                                <th>Highest Severity</th>
+                                <th>🔌 Application Name</th>
+                                <th>📊 Vulnerabilities</th>
+                                <th>⏰ Age (Days)</th>
+                                <th>🎯 Highest Severity</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -264,19 +265,19 @@
             <div class="summary-grid">
                 <div class="summary-card">
                     <div class="summary-value text-emerald">11</div>
-                    <div class="summary-label">Total Vulnerabilities</div>
+                    <div class="summary-label">📊 Total Vulnerabilities</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-red">8</div>
-                    <div class="summary-label">Open</div>
+                    <div class="summary-label">🔴 Open</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-green">3</div>
-                    <div class="summary-label">Closed</div>
+                    <div class="summary-label">🟢 Closed</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-value text-orange">3</div>
-                    <div class="summary-label">High Severity</div>
+                    <div class="summary-label">⚠️ High Severity</div>
                 </div>
             </div>
 
@@ -286,10 +287,10 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Application Name</th>
-                                <th>Vulnerabilities</th>
-                                <th>Age (Days)</th>
-                                <th>Highest Severity</th>
+                                <th>📱 Application Name</th>
+                                <th>📊 Vulnerabilities</th>
+                                <th>⏰ Age (Days)</th>
+                                <th>🎯 Highest Severity</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -304,38 +305,172 @@
                 </div>
 
                 <div class="alert-box">
-                    <p class="alert-text">📱 Mobile vulnerabilities require attention - 210 days average age with multiple low severity findings</p>
+                    <p class="alert-text">📱 Mobile vulnerabilities require immediate attention - 210 days average age with multiple findings that need remediation</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Aging Analysis Tab -->
+        <div id="aging-tab" class="content-section">
+            <div class="aging-section">
+                <h2 class="aging-title">Vulnerability Aging Analysis</h2>
+                <div class="aging-stats">
+                    <div class="aging-stat">
+                        <div class="aging-number text-red">210</div>
+                        <div class="aging-label">🔴 Oldest (Days)</div>
+                    </div>
+                    <div class="aging-stat">
+                        <div class="aging-number text-orange">128</div>
+                        <div class="aging-label">📊 Average (Days)</div>
+                    </div>
+                    <div class="aging-stat">
+                        <div class="aging-number text-green">20</div>
+                        <div class="aging-label">🟢 Newest (Days)</div>
+                    </div>
+                    <div class="aging-stat">
+                        <div class="aging-number text-purple">8</div>
+                        <div class="aging-label">⚠️ > 150 Days</div>
+                    </div>
+                    <div class="aging-stat">
+                        <div class="aging-number text-cyan">15</div>
+                        <div class="aging-label">⏰ 100-150 Days</div>
+                    </div>
+                    <div class="aging-stat">
+                        <div class="aging-number text-blue">29</div>
+                        <div class="aging-label">✅ < 100 Days</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Age Distribution by Range</h3>
+                    <div class="chart-container">
+                        <canvas id="ageRangeChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Age by Domain</h3>
+                    <div class="chart-container">
+                        <canvas id="ageDomainChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h3 class="chart-title">Top 10 Oldest Vulnerabilities</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>🔍 Application</th>
+                                <th>🌐 Domain</th>
+                                <th>⏰ Age (Days)</th>
+                                <th>🎯 Severity</th>
+                                <th>📅 Reported Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="app-name">ABHFL B2D IOS - Missing XSS Protection Header</td>
+                                <td>Mobile</td>
+                                <td><span class="badge badge-age-critical">210 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>May 7, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ABHFL B2D IOS - Insecure Document Handling</td>
+                                <td>Mobile</td>
+                                <td><span class="badge badge-age-critical">210 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>May 7, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ABC Samiksha - Application Vulnerable to Beast Attack</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-critical">173 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>June 13, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">api.abcscuat.com - Improper Input Validation</td>
+                                <td>API</td>
+                                <td><span class="badge badge-age-critical">169 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>June 17, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">QMS BOT - Improper Input Validation</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-critical">160 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>June 26, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">Pay Invoice - Usage of Vulnerable Bootstrap 4.5.0</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-warning">128 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                                <td>July 28, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">Partner Portal - Missing Rate Limit</td>
+                                <td>API</td>
+                                <td><span class="badge badge-age-warning">127 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>July 29, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ICAT UAT - Application Vulnerable to Clickjacking</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-warning">111 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>August 14, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ABC Mentoring Program - Missing Security Headers</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-warning">103 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                                <td>August 22, 2024</td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">OneConnectDev - Application Vulnerable to Lucky 13 Attack</td>
+                                <td>Web</td>
+                                <td><span class="badge badge-age-moderate">75 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                                <td>September 19, 2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <p class="alert-text">⚠️ Critical Action Required: 8 vulnerabilities are over 150 days old and require immediate remediation planning. Mobile application ABHFL B2D IOS has the oldest vulnerabilities at 210 days.</p>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p>Generated by Inspira Security Solutions | Dashboard as of December 3, 2024</p>
+            <p>🔒 Generated by Inspira Security Solutions for Aditya Birla Capital | Dashboard as of December 3, 2024 | Confidential</p>
         </div>
     </div>
 
     <script>
         // Tab switching functionality
         function showTab(tabName) {
-            // Hide all content sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
-
-            // Remove active class from all buttons
             document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
-
-            // Show selected tab
             document.getElementById(tabName + '-tab').classList.add('active');
-            
-            // Add active class to clicked button
             event.target.classList.add('active');
         }
 
-        // Chart configurations
+        // Chart configurations with ABC theme colors
         const chartColors = {
             critical: '#dc2626',
             high: '#ea580c',
@@ -358,22 +493,30 @@
                     {
                         label: 'Critical',
                         data: [0, 0, 0],
-                        backgroundColor: chartColors.critical
+                        backgroundColor: chartColors.critical,
+                        borderWidth: 2,
+                        borderColor: '#991b1b'
                     },
                     {
                         label: 'High',
                         data: [1, 1, 3],
-                        backgroundColor: chartColors.high
+                        backgroundColor: chartColors.high,
+                        borderWidth: 2,
+                        borderColor: '#c2410c'
                     },
                     {
                         label: 'Medium',
                         data: [10, 12, 1],
-                        backgroundColor: chartColors.medium
+                        backgroundColor: chartColors.medium,
+                        borderWidth: 2,
+                        borderColor: '#d97706'
                     },
                     {
                         label: 'Low',
                         data: [68, 21, 6],
-                        backgroundColor: chartColors.low
+                        backgroundColor: chartColors.low,
+                        borderWidth: 2,
+                        borderColor: '#1d4ed8'
                     }
                 ]
             },
@@ -381,11 +524,23 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 scales: {
-                    x: { stacked: true },
-                    y: { stacked: true }
+                    x: { 
+                        stacked: true,
+                        grid: { display: false }
+                    },
+                    y: { 
+                        stacked: true,
+                        grid: { color: '#fee2e2' }
+                    }
                 },
                 plugins: {
-                    legend: { position: 'bottom' }
+                    legend: { 
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 13, weight: 'bold' }
+                        }
+                    }
                 }
             }
         });
@@ -400,20 +555,34 @@
                     {
                         label: 'Open',
                         data: [16, 28, 8],
-                        backgroundColor: chartColors.open
+                        backgroundColor: chartColors.open,
+                        borderWidth: 2,
+                        borderColor: '#991b1b'
                     },
                     {
                         label: 'Closed',
                         data: [36, 284, 3],
-                        backgroundColor: chartColors.closed
+                        backgroundColor: chartColors.closed,
+                        borderWidth: 2,
+                        borderColor: '#065f46'
                     }
                 ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: '#fee2e2' } }
+                },
                 plugins: {
-                    legend: { position: 'bottom' }
+                    legend: { 
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 13, weight: 'bold' }
+                        }
+                    }
                 }
             }
         });
@@ -421,7 +590,7 @@
         // Severity Pie Chart
         const severityPieCtx = document.getElementById('severityPieChart').getContext('2d');
         new Chart(severityPieCtx, {
-            type: 'pie',
+            type: 'doughnut',
             data: {
                 labels: ['Critical', 'High', 'Medium', 'Low'],
                 datasets: [{
@@ -431,14 +600,22 @@
                         chartColors.high,
                         chartColors.medium,
                         chartColors.low
-                    ]
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#ffffff'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'bottom' }
+                    legend: { 
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 13, weight: 'bold' }
+                        }
+                    }
                 }
             }
         });
@@ -446,7 +623,7 @@
         // Domain Pie Chart
         const domainPieCtx = document.getElementById('domainPieChart').getContext('2d');
         new Chart(domainPieCtx, {
-            type: 'pie',
+            type: 'doughnut',
             data: {
                 labels: ['Web Applications', 'API', 'Mobile'],
                 datasets: [{
@@ -455,14 +632,103 @@
                         chartColors.purple,
                         chartColors.cyan,
                         chartColors.emerald
-                    ]
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#ffffff'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'bottom' }
+                    legend: { 
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 13, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Age Range Chart
+        const ageRangeCtx = document.getElementById('ageRangeChart').getContext('2d');
+        new Chart(ageRangeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['0-30 Days', '31-60 Days', '61-100 Days', '101-150 Days', '151+ Days'],
+                datasets: [{
+                    label: 'Number of Vulnerabilities',
+                    data: [5, 8, 16, 15, 8],
+                    backgroundColor: [
+                        '#10b981',
+                        '#3b82f6',
+                        '#f59e0b',
+                        '#ea580c',
+                        '#dc2626'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { 
+                        grid: { color: '#fee2e2' },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: { 
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Age by Domain Chart
+        const ageDomainCtx = document.getElementById('ageDomainChart').getContext('2d');
+        new Chart(ageDomainCtx, {
+            type: 'line',
+            data: {
+                labels: ['Web', 'API', 'Mobile'],
+                datasets: [{
+                    label: 'Average Age (Days)',
+                    data: [125, 72, 210],
+                    backgroundColor: 'rgba(220, 38, 38, 0.2)',
+                    borderColor: chartColors.critical,
+                    borderWidth: 4,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 8,
+                    pointHoverRadius: 12,
+                    pointBackgroundColor: chartColors.critical,
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { 
+                        grid: { color: '#fee2e2' },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: { 
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 13, weight: 'bold' }
+                        }
+                    }
                 }
             }
         });
