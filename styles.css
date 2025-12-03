@@ -1,0 +1,385 @@
+/* VM Dashboard Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+    min-height: 100vh;
+}
+
+.container {
+    padding: 1.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-box {
+    width: 12rem;
+    height: 4rem;
+    background: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e8f0;
+    padding: 0.5rem;
+}
+
+.inspira-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #475569;
+}
+
+.inspira-dots {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: 0.25rem;
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+}
+
+.dot-red { background-color: #ef4444; }
+.dot-yellow { background-color: #facc15; }
+
+.logo-divider {
+    height: 3rem;
+    width: 1px;
+    background-color: #cbd5e1;
+}
+
+.abc-logo {
+    text-align: center;
+}
+
+.abc-logo .small {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.abc-logo .large {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.title-section {
+    text-align: right;
+}
+
+.main-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.subtitle {
+    color: #475569;
+    margin-top: 0.25rem;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    color: white;
+}
+
+.metric-value {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.metric-label {
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+.bg-purple { background: linear-gradient(to bottom right, #8b5cf6, #7c3aed); }
+.bg-red { background: linear-gradient(to bottom right, #ef4444, #dc2626); }
+.bg-green { background: linear-gradient(to bottom right, #10b981, #059669); }
+.bg-orange { background: linear-gradient(to bottom right, #f97316, #ea580c); }
+.bg-blue { background: linear-gradient(to bottom right, #3b82f6, #2563eb); }
+
+/* Tabs */
+.tabs-container {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button:not(.active) {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.tab-button:not(.active):hover {
+    background-color: #e2e8f0;
+}
+
+.tab-button.active {
+    background-color: #7c3aed;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+/* Summary Cards */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.summary-value {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.summary-label {
+    color: #475569;
+    margin-top: 0.25rem;
+}
+
+.text-purple { color: #7c3aed; }
+.text-red { color: #dc2626; }
+.text-green { color: #059669; }
+.text-orange { color: #ea580c; }
+.text-cyan { color: #0891b2; }
+.text-emerald { color: #10b981; }
+
+/* Table Styles */
+.table-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background-color: #f1f5f9;
+}
+
+.data-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #334155;
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.app-name {
+    font-weight: 500;
+    color: #1e293b;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.badge-age-critical {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-age-warning {
+    background-color: #fed7aa;
+    color: #9a3412;
+}
+
+.badge-age-moderate {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-age-good {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-severity-high {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-severity-medium {
+    background-color: #fed7aa;
+    color: #9a3412;
+}
+
+.badge-severity-low {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Alert Box */
+.alert-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #dbeafe;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.375rem;
+}
+
+.alert-text {
+    color: #1e40af;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    margin-top: 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    color: #475569;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .title-section {
+        text-align: center;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

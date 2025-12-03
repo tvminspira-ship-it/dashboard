@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Management Dashboard - Aditya Birla Capital</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logos -->
+        <div class="header-card">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-box">
+                        <span class="inspira-logo">inspira</span>
+                        <span class="inspira-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                        </span>
+                    </div>
+                    <div class="logo-divider"></div>
+                    <div class="logo-box">
+                        <div class="abc-logo">
+                            <div class="small">ADITYA BIRLA</div>
+                            <div class="large">CAPITAL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-section">
+                    <h1 class="main-title">Vulnerability Management Dashboard</h1>
+                    <p class="subtitle">Real-time Security Overview</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card bg-purple">
+                <div class="metric-value" id="total-vulns">375</div>
+                <div class="metric-label">Total Vulnerabilities</div>
+            </div>
+            <div class="metric-card bg-red">
+                <div class="metric-value" id="open-vulns">52</div>
+                <div class="metric-label">Open Vulnerabilities</div>
+            </div>
+            <div class="metric-card bg-green">
+                <div class="metric-value" id="closed-vulns">323</div>
+                <div class="metric-label">Closed Vulnerabilities</div>
+            </div>
+            <div class="metric-card bg-orange">
+                <div class="metric-value" id="resolution-rate">86.1%</div>
+                <div class="metric-label">Resolution Rate</div>
+            </div>
+            <div class="metric-card bg-blue">
+                <div class="metric-value">128</div>
+                <div class="metric-label">Avg. Age (Days)</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-button" onclick="showTab('web')">Web Applications</button>
+                <button class="tab-button" onclick="showTab('api')">API</button>
+                <button class="tab-button" onclick="showTab('mobile')">Mobile</button>
+            </div>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="overview-tab" class="content-section active">
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Vulnerabilities by Severity & Domain</h3>
+                    <div class="chart-container">
+                        <canvas id="severityChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Open vs Closed by Domain</h3>
+                    <div class="chart-container">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Severity Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="severityPieChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Domain Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="domainPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Web Applications Tab -->
+        <div id="web-tab" class="content-section">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-value text-purple">52</div>
+                    <div class="summary-label">Total Vulnerabilities</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-red">16</div>
+                    <div class="summary-label">Open</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-green">36</div>
+                    <div class="summary-label">Closed</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-orange">1</div>
+                    <div class="summary-label">High Severity</div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h3 class="chart-title">Web Applications Details</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Application Name</th>
+                                <th>Vulnerabilities</th>
+                                <th>Age (Days)</th>
+                                <th>Highest Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="app-name">QMS BOT</td>
+                                <td>3</td>
+                                <td><span class="badge badge-age-critical">160 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ABC Samiksha</td>
+                                <td>10</td>
+                                <td><span class="badge badge-age-critical">173 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">Pay Invoice</td>
+                                <td>14</td>
+                                <td><span class="badge badge-age-warning">128 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ICAT UAT</td>
+                                <td>11</td>
+                                <td><span class="badge badge-age-warning">111 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ABC Mentoring Program</td>
+                                <td>5</td>
+                                <td><span class="badge badge-age-warning">103 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">OneConnectDev</td>
+                                <td>4</td>
+                                <td><span class="badge badge-age-moderate">75 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Tab -->
+        <div id="api-tab" class="content-section">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-value text-cyan">312</div>
+                    <div class="summary-label">Total Vulnerabilities</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-red">28</div>
+                    <div class="summary-label">Open</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-green">284</div>
+                    <div class="summary-label">Closed</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-orange">1</div>
+                    <div class="summary-label">High Severity</div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h3 class="chart-title">API Applications Details</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Application Name</th>
+                                <th>Vulnerabilities</th>
+                                <th>Age (Days)</th>
+                                <th>Highest Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="app-name">api.abcscuat.com (10)</td>
+                                <td>1</td>
+                                <td><span class="badge badge-age-critical">169 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">Partner Portal (2)</td>
+                                <td>2</td>
+                                <td><span class="badge badge-age-warning">127 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">SHARPSELL (11)</td>
+                                <td>2</td>
+                                <td><span class="badge badge-age-moderate">50 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">ESB Modernization DWH (24)</td>
+                                <td>3</td>
+                                <td><span class="badge badge-age-good">41 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">Tiny URL (5)</td>
+                                <td>5</td>
+                                <td><span class="badge badge-age-good">40 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">UAT Inbound (7)</td>
+                                <td>2</td>
+                                <td><span class="badge badge-age-good">20 days</span></td>
+                                <td><span class="badge badge-severity-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="app-name">UAT Outbound (9)</td>
+                                <td>2</td>
+                                <td><span class="badge badge-age-good">20 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Tab -->
+        <div id="mobile-tab" class="content-section">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-value text-emerald">11</div>
+                    <div class="summary-label">Total Vulnerabilities</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-red">8</div>
+                    <div class="summary-label">Open</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-green">3</div>
+                    <div class="summary-label">Closed</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value text-orange">3</div>
+                    <div class="summary-label">High Severity</div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h3 class="chart-title">Mobile Applications Details</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Application Name</th>
+                                <th>Vulnerabilities</th>
+                                <th>Age (Days)</th>
+                                <th>Highest Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="app-name">ABHFL B2D IOS</td>
+                                <td>5</td>
+                                <td><span class="badge badge-age-critical">210 days</span></td>
+                                <td><span class="badge badge-severity-low">Low</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert-box">
+                    <p class="alert-text">📱 Mobile vulnerabilities require attention - 210 days average age with multiple low severity findings</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Generated by Inspira Security Solutions | Dashboard as of December 3, 2024</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Chart configurations
+        const chartColors = {
+            critical: '#dc2626',
+            high: '#ea580c',
+            medium: '#f59e0b',
+            low: '#3b82f6',
+            open: '#ef4444',
+            closed: '#10b981',
+            purple: '#8b5cf6',
+            cyan: '#06b6d4',
+            emerald: '#10b981'
+        };
+
+        // Severity Chart (Stacked Bar)
+        const severityCtx = document.getElementById('severityChart').getContext('2d');
+        new Chart(severityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Web', 'API', 'Mobile'],
+                datasets: [
+                    {
+                        label: 'Critical',
+                        data: [0, 0, 0],
+                        backgroundColor: chartColors.critical
+                    },
+                    {
+                        label: 'High',
+                        data: [1, 1, 3],
+                        backgroundColor: chartColors.high
+                    },
+                    {
+                        label: 'Medium',
+                        data: [10, 12, 1],
+                        backgroundColor: chartColors.medium
+                    },
+                    {
+                        label: 'Low',
+                        data: [68, 21, 6],
+                        backgroundColor: chartColors.low
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true }
+                },
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Status Chart (Grouped Bar)
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Web', 'API', 'Mobile'],
+                datasets: [
+                    {
+                        label: 'Open',
+                        data: [16, 28, 8],
+                        backgroundColor: chartColors.open
+                    },
+                    {
+                        label: 'Closed',
+                        data: [36, 284, 3],
+                        backgroundColor: chartColors.closed
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Severity Pie Chart
+        const severityPieCtx = document.getElementById('severityPieChart').getContext('2d');
+        new Chart(severityPieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Critical', 'High', 'Medium', 'Low'],
+                datasets: [{
+                    data: [0, 5, 23, 95],
+                    backgroundColor: [
+                        chartColors.critical,
+                        chartColors.high,
+                        chartColors.medium,
+                        chartColors.low
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Domain Pie Chart
+        const domainPieCtx = document.getElementById('domainPieChart').getContext('2d');
+        new Chart(domainPieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Web Applications', 'API', 'Mobile'],
+                datasets: [{
+                    data: [52, 312, 11],
+                    backgroundColor: [
+                        chartColors.purple,
+                        chartColors.cyan,
+                        chartColors.emerald
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
