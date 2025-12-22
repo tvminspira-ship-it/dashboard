@@ -707,3 +707,191 @@ body {
         height: 4rem;
     }
 }
+
+/* =========================
+   VM Dashboard - Additions for Dropdown + SLA + Aging
+   ========================= */
+
+/* App dropdown button in tables */
+.app-toggle{
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  color: #1e293b;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+}
+
+.app-toggle .caret{
+  display: inline-block;
+  width: 18px;
+  color: #dc2626;
+  font-weight: 900;
+}
+
+.app-toggle a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-toggle a:hover{
+  text-decoration: underline;
+}
+
+/* Details row under each application */
+.details-row{
+  display: none;
+  background: transparent !important;
+}
+
+.details-row.open{
+  display: table-row;
+}
+
+.details-row td{
+  padding: 0.75rem 1rem 1.25rem 1rem;
+  border-bottom: 2px solid #fee2e2;
+}
+
+/* Details box layout */
+.details-box{
+  background: linear-gradient(135deg, #ffffff, #fef2f2);
+  border: 2px solid #fca5a5;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.12);
+}
+
+.details-title{
+  font-weight: 900;
+  color: #dc2626;
+  margin-bottom: 0.75rem;
+}
+
+/* Vulnerability list inside dropdown */
+.vuln-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.vuln-item{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #fee2e2;
+  background: white;
+}
+
+.vuln-name{
+  font-weight: 700;
+  color: #0f172a;
+  max-width: 65%;
+}
+
+.vuln-meta{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Status pill */
+.status-pill{
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.status-open{
+  background: rgba(239,68,68,.15);
+  color: #991b1b;
+}
+
+.status-closed{
+  background: rgba(16,185,129,.15);
+  color: #065f46;
+}
+
+/* SLA/Age pills */
+.age-pill{
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  background: rgba(148,163,184,.15);
+  border: 1px solid rgba(148,163,184,.35);
+  color: #0f172a;
+}
+
+.sla-pill{
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.sla-breached{
+  background: rgba(239,68,68,.20);
+  border-color: rgba(239,68,68,.35);
+  color: #991b1b;
+}
+
+.sla-ok{
+  background: rgba(16,185,129,.18);
+  border-color: rgba(16,185,129,.35);
+  color: #065f46;
+}
+
+/* Days overdue pill */
+.overdue-pill{
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  background: rgba(239,68,68,.25);
+  border: 1px solid rgba(239,68,68,.45);
+  color: #991b1b;
+}
+
+/* Aging controls row */
+.aging-controls{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Toggle */
+.sla-toggle{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  font-weight: 800;
+  user-select: none;
+}
+
+/* Show ALL rows in Aging table (no fixed max-height clipping) */
+#aging-tab .table-container{
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* If your table container is reused elsewhere and you want scrolling only there,
+   comment the two lines above and use this instead:
+   #aging-tab .table-container { overflow-x:auto; }
+*/
