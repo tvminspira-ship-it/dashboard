@@ -1,740 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerability Management Dashboard - Aditya Birla Capital</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vulnerability Management Dashboard - Aditya Birla Capital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <!-- Header with Logos -->
-        <div class="header-card">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="logo-box">
-                        <span class="inspira-logo">inspira</span>
-                        <span class="inspira-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                        </span>
-                    </div>
-                    <div class="logo-divider"></div>
-                    <div class="logo-box">
-                        <div class="abc-logo">
-                            <div class="small">ADITYA BIRLA</div>
-                            <div class="large">CAPITAL</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="title-section">
-                    <h1 class="main-title">Vulnerability Management Dashboard</h1>
-                    <p class="subtitle">🔒 Real-time Security Overview & Analytics</p>
-                </div>
+  <div class="container">
+    <!-- Header with Logos -->
+    <div class="header-card">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-box">
+            <span class="inspira-logo">inspira</span>
+            <span class="inspira-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+            </span>
+          </div>
+          <div class="logo-divider"></div>
+          <div class="logo-box">
+            <div class="abc-logo">
+              <div class="small">ADITYA BIRLA</div>
+              <div class="large">CAPITAL</div>
             </div>
+          </div>
         </div>
-
-        <!-- Key Metrics -->
-        <div class="metrics-grid">
-            <div class="metric-card bg-purple">
-                <div class="metric-value">125</div>
-                <div class="metric-label">📈 Total Vulnerabilities</div>
-            </div>
-            <div class="metric-card bg-red">
-                <div class="metric-value">66</div>
-                <div class="metric-label">⚠️ Open Vulnerabilities</div>
-            </div>
-            <div class="metric-card bg-green">
-                <div class="metric-value">59</div>
-                <div class="metric-label">✅ Closed Vulnerabilities</div>
-            </div>
-            <div class="metric-card bg-orange">
-                <div class="metric-value">47.2%</div>
-                <div class="metric-label">🎯 Resolution Rate</div>
-            </div>
-            <div class="metric-card bg-blue">
-                <div class="metric-value">128</div>
-                <div class="metric-label">⏱️ Avg. Age (Days)</div>
-            </div>
+        <div class="title-section">
+          <h1 class="main-title">Vulnerability Management Dashboard</h1>
+          <p class="subtitle">🔒 Real-time Security Overview & Analytics</p>
         </div>
-
-        <!-- Tabs -->
-        <div class="tabs-container">
-            <div class="tabs">
-                <button class="tab-button active" onclick="showTab('overview')">🔍 Overview</button>
-                <button class="tab-button" onclick="showTab('web')">🌐 Web Applications</button>
-                <button class="tab-button" onclick="showTab('api')">🔌 API</button>
-                <button class="tab-button" onclick="showTab('mobile')">📱 Mobile</button>
-                <button class="tab-button" onclick="showTab('aging')">⏰ Aging Analysis</button>
-            </div>
-        </div>
-
-        <!-- Overview Tab -->
-        <div id="overview-tab" class="content-section active">
-            <div class="charts-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title">Vulnerabilities by Severity & Domain</h3>
-                    <div class="chart-container">
-                        <canvas id="severityChart"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <h3 class="chart-title">Open vs Closed by Domain</h3>
-                    <div class="chart-container">
-                        <canvas id="statusChart"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="charts-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title">Severity Distribution</h3>
-                    <div class="chart-container">
-                        <canvas id="severityPieChart"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <h3 class="chart-title">Domain Distribution</h3>
-                    <div class="chart-container">
-                        <canvas id="domainPieChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Web Applications Tab -->
-        <div id="web-tab" class="content-section">
-            <div class="summary-grid">
-                <div class="summary-card">
-                    <div class="summary-value text-purple">79</div>
-                    <div class="summary-label">📊 Total Vulnerabilities</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-red">37</div>
-                    <div class="summary-label">🔴 Open</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-green">42</div>
-                    <div class="summary-label">🟢 Closed</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-orange">3</div>
-                    <div class="summary-label">⚠️ Medium Severity</div>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <h3 class="chart-title">Web Applications Details</h3>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>🌐 Application Name</th>
-                                <th>📊 Vulnerabilities</th>
-                                <th>⏰ Age (Days)</th>
-                                <th>🎯 Highest Severity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="app-name">QMS BOT</td>
-                                <td>3</td>
-                                <td><span class="badge badge-age-critical">160 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ABC Samiksha</td>
-                                <td>10</td>
-                                <td><span class="badge badge-age-critical">173 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">Pay Invoice</td>
-                                <td>14</td>
-                                <td><span class="badge badge-age-warning">128 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ICAT UAT</td>
-                                <td>11</td>
-                                <td><span class="badge badge-age-warning">111 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ABC Mentoring Program</td>
-                                <td>5</td>
-                                <td><span class="badge badge-age-warning">103 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">OneConnectDev</td>
-                                <td>4</td>
-                                <td><span class="badge badge-age-moderate">75 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- API Tab -->
-        <div id="api-tab" class="content-section">
-            <div class="summary-grid">
-                <div class="summary-card">
-                    <div class="summary-value text-cyan">36</div>
-                    <div class="summary-label">📊 Total Vulnerabilities</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-red">19</div>
-                    <div class="summary-label">🔴 Open</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-green">17</div>
-                    <div class="summary-label">🟢 Closed</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-orange">6</div>
-                    <div class="summary-label">⚠️ Medium Severity</div>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <h3 class="chart-title">API Applications Details</h3>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>🔌 Application Name</th>
-                                <th>📊 Vulnerabilities</th>
-                                <th>⏰ Age (Days)</th>
-                                <th>🎯 Highest Severity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="app-name">api.abcscuat.com (10)</td>
-                                <td>1</td>
-                                <td><span class="badge badge-age-critical">169 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">Partner Portal (2)</td>
-                                <td>2</td>
-                                <td><span class="badge badge-age-warning">127 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">SHARPSELL (11)</td>
-                                <td>2</td>
-                                <td><span class="badge badge-age-moderate">50 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ESB Modernization DWH (24)</td>
-                                <td>3</td>
-                                <td><span class="badge badge-age-good">41 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">Tiny URL (5)</td>
-                                <td>5</td>
-                                <td><span class="badge badge-age-good">40 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">UAT Inbound (7)</td>
-                                <td>2</td>
-                                <td><span class="badge badge-age-good">20 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">UAT Outbound (9)</td>
-                                <td>2</td>
-                                <td><span class="badge badge-age-good">20 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Tab -->
-        <div id="mobile-tab" class="content-section">
-            <div class="summary-grid">
-                <div class="summary-card">
-                    <div class="summary-value text-emerald">10</div>
-                    <div class="summary-label">📊 Total Vulnerabilities</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-red">5</div>
-                    <div class="summary-label">🔴 Open</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-green">5</div>
-                    <div class="summary-label">🟢 Closed</div>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-value text-orange">0</div>
-                    <div class="summary-label">⚠️ High Severity</div>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <h3 class="chart-title">Mobile Applications Details</h3>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>📱 Application Name</th>
-                                <th>📊 Vulnerabilities</th>
-                                <th>⏰ Age (Days)</th>
-                                <th>🎯 Highest Severity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="app-name">ABHFL B2D IOS</td>
-                                <td>5</td>
-                                <td><span class="badge badge-age-critical">210 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="alert-box">
-                    <p class="alert-text">📱 Mobile vulnerabilities require immediate attention - 210 days average age with multiple findings that need remediation</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Aging Analysis Tab -->
-        <div id="aging-tab" class="content-section">
-            <div class="aging-section">
-                <h2 class="aging-title">Vulnerability Aging Analysis</h2>
-                <div class="aging-stats">
-                    <div class="aging-stat">
-                        <div class="aging-number text-red">210</div>
-                        <div class="aging-label">🔴 Oldest (Days)</div>
-                    </div>
-                    <div class="aging-stat">
-                        <div class="aging-number text-orange">128</div>
-                        <div class="aging-label">📊 Average (Days)</div>
-                    </div>
-                    <div class="aging-stat">
-                        <div class="aging-number text-green">20</div>
-                        <div class="aging-label">🟢 Newest (Days)</div>
-                    </div>
-                    <div class="aging-stat">
-                        <div class="aging-number text-purple">8</div>
-                        <div class="aging-label">⚠️ > 150 Days</div>
-                    </div>
-                    <div class="aging-stat">
-                        <div class="aging-number text-cyan">15</div>
-                        <div class="aging-label">⏰ 100-150 Days</div>
-                    </div>
-                    <div class="aging-stat">
-                        <div class="aging-number text-blue">29</div>
-                        <div class="aging-label">✅ < 100 Days</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="charts-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title">Age Distribution by Range</h3>
-                    <div class="chart-container">
-                        <canvas id="ageRangeChart"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <h3 class="chart-title">Age by Domain</h3>
-                    <div class="chart-container">
-                        <canvas id="ageDomainChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <h3 class="chart-title">Top 10 Oldest Vulnerabilities</h3>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>🔍 Application</th>
-                                <th>🌐 Domain</th>
-                                <th>⏰ Age (Days)</th>
-                                <th>🎯 Severity</th>
-                                <th>📅 Reported Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="app-name">ABHFL B2D IOS - Missing XSS Protection Header</td>
-                                <td>Mobile</td>
-                                <td><span class="badge badge-age-critical">210 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>May 7, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ABHFL B2D IOS - Insecure Document Handling</td>
-                                <td>Mobile</td>
-                                <td><span class="badge badge-age-critical">210 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>May 7, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ABC Samiksha - Application Vulnerable to Beast Attack</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-critical">173 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>June 13, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">api.abcscuat.com - Improper Input Validation</td>
-                                <td>API</td>
-                                <td><span class="badge badge-age-critical">169 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>June 17, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">QMS BOT - Improper Input Validation</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-critical">160 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>June 26, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">Pay Invoice - Usage of Vulnerable Bootstrap 4.5.0</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-warning">128 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                                <td>July 28, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">Partner Portal - Missing Rate Limit</td>
-                                <td>API</td>
-                                <td><span class="badge badge-age-warning">127 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>July 29, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ICAT UAT - Application Vulnerable to Clickjacking</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-warning">111 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>August 14, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">ABC Mentoring Program - Missing Security Headers</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-warning">103 days</span></td>
-                                <td><span class="badge badge-severity-medium">Medium</span></td>
-                                <td>August 22, 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="app-name">OneConnectDev - Application Vulnerable to Lucky 13 Attack</td>
-                                <td>Web</td>
-                                <td><span class="badge badge-age-moderate">75 days</span></td>
-                                <td><span class="badge badge-severity-low">Low</span></td>
-                                <td>September 19, 2025</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="alert-box">
-                <p class="alert-text">⚠️ Critical Action Required: 8 vulnerabilities are over 150 days old and require immediate remediation planning. Mobile application ABHFL B2D IOS has the oldest vulnerabilities at 210 days.</p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>🔒 Generated by Inspira Security Solutions for Aditya Birla Capital | Dashboard as of December 3, 2025 | Confidential</p>
-        </div>
+      </div>
     </div>
 
-    <script>
-        // Tab switching functionality
-        function showTab(tabName) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.getElementById(tabName + '-tab').classList.add('active');
-            event.target.classList.add('active');
-        }
+    <!-- Key Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card bg-purple">
+        <div class="metric-value">—</div>
+        <div class="metric-label">📈 Total Vulnerabilities</div>
+      </div>
+      <div class="metric-card bg-red">
+        <div class="metric-value">—</div>
+        <div class="metric-label">⚠️ Open Vulnerabilities</div>
+      </div>
+      <div class="metric-card bg-green">
+        <div class="metric-value">—</div>
+        <div class="metric-label">✅ Closed Vulnerabilities</div>
+      </div>
+      <div class="metric-card bg-orange">
+        <div class="metric-value">—</div>
+        <div class="metric-label">🎯 Resolution Rate</div>
+      </div>
+      <div class="metric-card bg-blue">
+        <div class="metric-value">—</div>
+        <div class="metric-label">⏱️ Avg. Age (Days)</div>
+      </div>
+    </div>
 
-        // Chart configurations with ABC theme colors
-        const chartColors = {
-            critical: '#dc2626',
-            high: '#ea580c',
-            medium: '#f59e0b',
-            low: '#3b82f6',
-            open: '#ef4444',
-            closed: '#10b981',
-            purple: '#8b5cf6',
-            cyan: '#06b6d4',
-            emerald: '#10b981'
-        };
+    <!-- Tabs -->
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('overview', this)">🔍 Overview</button>
+        <button class="tab-button" onclick="showTab('web', this)">🌐 Web Applications</button>
+        <button class="tab-button" onclick="showTab('api', this)">🔌 API</button>
+        <button class="tab-button" onclick="showTab('mobile', this)">📱 Mobile</button>
+        <button class="tab-button" onclick="showTab('aging', this)">⏰ Aging Analysis</button>
+      </div>
+    </div>
 
-        // Severity Chart (Stacked Bar)
-        const severityCtx = document.getElementById('severityChart').getContext('2d');
-        new Chart(severityCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Web', 'API', 'Mobile'],
-                datasets: [
-                    {
-                        label: 'Critical',
-                        data: [0, 0, 0],
-                        backgroundColor: chartColors.critical,
-                        borderWidth: 2,
-                        borderColor: '#991b1b'
-                    },
-                    {
-                        label: 'High',
-                        data: [1, 1, 3],
-                        backgroundColor: chartColors.high,
-                        borderWidth: 2,
-                        borderColor: '#c2410c'
-                    },
-                    {
-                        label: 'Medium',
-                        data: [10, 12, 1],
-                        backgroundColor: chartColors.medium,
-                        borderWidth: 2,
-                        borderColor: '#d97706'
-                    },
-                    {
-                        label: 'Low',
-                        data: [68, 21, 6],
-                        backgroundColor: chartColors.low,
-                        borderWidth: 2,
-                        borderColor: '#1d4ed8'
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { 
-                        stacked: true,
-                        grid: { display: false }
-                    },
-                    y: { 
-                        stacked: true,
-                        grid: { color: '#fee2e2' }
-                    }
-                },
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            font: { size: 13, weight: 'bold' }
-                        }
-                    }
-                }
-            }
-        });
+    <!-- Overview Tab -->
+    <div id="overview-tab" class="content-section active">
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">Vulnerabilities by Severity & Domain</h3>
+          <div class="chart-container">
+            <canvas id="severityChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">Open vs Closed by Domain</h3>
+          <div class="chart-container">
+            <canvas id="statusChart"></canvas>
+          </div>
+        </div>
+      </div>
 
-        // Status Chart (Grouped Bar)
-        const statusCtx = document.getElementById('statusChart').getContext('2d');
-        new Chart(statusCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Web', 'API', 'Mobile'],
-                datasets: [
-                    {
-                        label: 'Open',
-                        data: [16, 28, 8],
-                        backgroundColor: chartColors.open,
-                        borderWidth: 2,
-                        borderColor: '#991b1b'
-                    },
-                    {
-                        label: 'Closed',
-                        data: [36, 284, 3],
-                        backgroundColor: chartColors.closed,
-                        borderWidth: 2,
-                        borderColor: '#065f46'
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { grid: { display: false } },
-                    y: { grid: { color: '#fee2e2' } }
-                },
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            font: { size: 13, weight: 'bold' }
-                        }
-                    }
-                }
-            }
-        });
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">Severity Distribution</h3>
+          <div class="chart-container">
+            <canvas id="severityPieChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">Domain Distribution</h3>
+          <div class="chart-container">
+            <canvas id="domainPieChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        // Severity Pie Chart
-        const severityPieCtx = document.getElementById('severityPieChart').getContext('2d');
-        new Chart(severityPieCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Critical', 'High', 'Medium', 'Low'],
-                datasets: [{
-                    data: [0, 5, 23, 95],
-                    backgroundColor: [
-                        chartColors.critical,
-                        chartColors.high,
-                        chartColors.medium,
-                        chartColors.low
-                    ],
-                    borderWidth: 3,
-                    borderColor: '#ffffff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            font: { size: 13, weight: 'bold' }
-                        }
-                    }
-                }
-            }
-        });
+    <!-- Web Tab -->
+    <div id="web-tab" class="content-section">
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-value text-purple">—</div>
+          <div class="summary-label">📊 Total Vulnerabilities</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-red">—</div>
+          <div class="summary-label">🔴 Open</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-green">—</div>
+          <div class="summary-label">🟢 Closed</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-orange">—</div>
+          <div class="summary-label">⚠️ Medium Severity</div>
+        </div>
+      </div>
 
-        // Domain Pie Chart
-        const domainPieCtx = document.getElementById('domainPieChart').getContext('2d');
-        new Chart(domainPieCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Web Applications', 'API', 'Mobile'],
-                datasets: [{
-                    data: [52, 312, 11],
-                    backgroundColor: [
-                        chartColors.purple,
-                        chartColors.cyan,
-                        chartColors.emerald
-                    ],
-                    borderWidth: 3,
-                    borderColor: '#ffffff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            font: { size: 13, weight: 'bold' }
-                        }
-                    }
-                }
-            }
-        });
+      <div class="table-card">
+        <h3 class="chart-title">Web Applications Details</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>🌐 Application Name</th>
+                <th>📊 Vulnerabilities</th>
+                <th>⏰ Age (Days)</th>
+                <th>🎯 Highest Severity</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-        // Age Range Chart
-        const ageRangeCtx = document.getElementById('ageRangeChart').getContext('2d');
-        new Chart(ageRangeCtx, {
-            type: 'bar',
-            data: {
-                labels: ['0-30 Days', '31-60 Days', '61-100 Days', '101-150 Days', '151+ Days'],
-                datasets: [{
-                    label: 'Number of Vulnerabilities',
-                    data: [5, 8, 16, 15, 8],
-                    backgroundColor: [
-                        '#10b981',
-                        '#3b82f6',
-                        '#f59e0b',
-                        '#ea580c',
-                        '#dc2626'
-                    ],
-                    borderWidth: 2,
-                    borderColor: '#ffffff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { grid: { display: false } },
-                    y: { 
-                        grid: { color: '#fee2e2' },
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: { 
-                        display: false
-                    }
-                }
-            }
-        });
+    <!-- API Tab -->
+    <div id="api-tab" class="content-section">
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-value text-cyan">—</div>
+          <div class="summary-label">📊 Total Vulnerabilities</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-red">—</div>
+          <div class="summary-label">🔴 Open</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-green">—</div>
+          <div class="summary-label">🟢 Closed</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-orange">—</div>
+          <div class="summary-label">⚠️ Medium Severity</div>
+        </div>
+      </div>
 
-        // Age by Domain Chart
-        const ageDomainCtx = document.getElementById('ageDomainChart').getContext('2d');
-        new Chart(ageDomainCtx, {
-            type: 'line',
-            data: {
-                labels: ['Web', 'API', 'Mobile'],
-                datasets: [{
-                    label: 'Average Age (Days)',
-                    data: [125, 72, 210],
-                    backgroundColor: 'rgba(220, 38, 38, 0.2)',
-                    borderColor: chartColors.critical,
-                    borderWidth: 4,
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 8,
-                    pointHoverRadius: 12,
-                    pointBackgroundColor: chartColors.critical,
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: { grid: { display: false } },
-                    y: { 
-                        grid: { color: '#fee2e2' },
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            font: { size: 13, weight: 'bold' }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+      <div class="table-card">
+        <h3 class="chart-title">API Applications Details</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>🔌 Application Name</th>
+                <th>📊 Vulnerabilities</th>
+                <th>⏰ Age (Days)</th>
+                <th>🎯 Highest Severity</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Tab -->
+    <div id="mobile-tab" class="content-section">
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-value text-emerald">—</div>
+          <div class="summary-label">📊 Total Vulnerabilities</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-red">—</div>
+          <div class="summary-label">🔴 Open</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-green">—</div>
+          <div class="summary-label">🟢 Closed</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-value text-orange">—</div>
+          <div class="summary-label">⚠️ High Severity</div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <h3 class="chart-title">Mobile Applications Details</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>📱 Application Name</th>
+                <th>📊 Vulnerabilities</th>
+                <th>⏰ Age (Days)</th>
+                <th>🎯 Highest Severity</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="alert-box">
+          <p class="alert-text">📱 Mobile vulnerabilities require immediate attention. Data is auto-calculated.</p>
+        </div>
+      </div>
+    </div>
+
+<!-- Aging Analysis Tab -->
+<div id="aging-tab" class="content-section">
+  <div class="aging-section">
+    <h2 class="aging-title">Vulnerability Aging Analysis</h2>
+
+    <div class="aging-stats">
+      <div class="aging-stat">
+        <div class="aging-number text-red" id="aging-oldest">—</div>
+        <div class="aging-label">🔴 Oldest (Days) - Open Only</div>
+      </div>
+      <div class="aging-stat">
+        <div class="aging-number text-orange" id="aging-avg">—</div>
+        <div class="aging-label">📊 Average (Days) - Open Only</div>
+      </div>
+      <div class="aging-stat">
+        <div class="aging-number text-green" id="aging-newest">—</div>
+        <div class="aging-label">🟢 Newest (Days) - Open Only</div>
+      </div>
+
+      <div class="aging-stat">
+        <div class="aging-number text-red" id="sla-web">0</div>
+        <div class="aging-label">🌐 Web SLA Breached</div>
+      </div>
+      <div class="aging-stat">
+        <div class="aging-number text-red" id="sla-api">0</div>
+        <div class="aging-label">🔌 API SLA Breached</div>
+      </div>
+      <div class="aging-stat">
+        <div class="aging-number text-red" id="sla-mobile">0</div>
+        <div class="aging-label">📱 Mobile SLA Breached</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3 class="chart-title">Open Vulnerabilities by Severity (Within SLA vs Breached)</h3>
+      <div class="chart-container">
+        <canvas id="ageRangeChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3 class="chart-title">Open Vulnerabilities by Domain (Within SLA vs Breached)</h3>
+      <div class="chart-container">
+        <canvas id="ageDomainChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="aging-controls">
+       <h3 class="chart-title">Open Vulnerabilities (Critical / High / Medium)</h3>
+
+
+
+      <label class="sla-toggle">
+        <input type="checkbox" id="slaOnlyToggle">
+        Show only SLA Breached
+      </label>
+    </div>
+
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>🔍 Application</th>
+            <th>🌐 Domain</th>
+            <th>⏰ Age & SLA</th>
+            <th>🎯 Severity</th>
+            <th>⏳ Days Overdue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <p class="alert-text">
+      ⚠️ Aging Analysis shows <b>Open vulnerabilities only</b>. SLA is calculated using Vulnerability Reported Date (fallback: Vulnerability Ageing).
+    </p>
+  </div>
+</div>
+
+
+  <!-- Load data first, then logic -->
+  <script src="js/web.data.js"></script>
+  <script src="js/api.data.js"></script>
+  <script src="js/mobile.data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
